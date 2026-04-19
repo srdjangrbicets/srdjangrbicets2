@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background: url("stadion.jpg") center/cover fixed;
+}
+
+/* OVERLAY */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(139,0,0,0.6), rgba(0,0,0,0.7));
+    z-index: -1;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px;
+    background: rgba(255,0,0,0.25);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: white;
+    margin: 0 18px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 10px red;
+}
+
+/* HERO */
+.hero {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero-content h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 75px;
+    text-shadow: 0 0 25px red;
+    animation: glow 2s infinite alternate;
+}
+
+/* SECTIONS */
+.section {
+    margin: 40px 8%;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.glass {
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,0,0,0.25);
+}
+
+
+/* CARDS */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    width: 250px;
+    padding: 20px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px red;
+}
+
+/* STATS */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.stat h3 {
+    font-size: 45px;
+    color: red;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255,0,0,0.2);
+}
+
+/* ANIMATION */
+@keyframes glow {
+    from {text-shadow: 0 0 10px red;}
+    to {text-shadow: 0 0 30px red;}
+}
+
+/* ========================= */
+/* 📱 MOBILE + HAMBURGER MENU */
+/* ========================= */
+
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+/* MOBILE NAV */
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: 10px;
+    }
+
+    nav a {
+        display: none;
+        width: 100%;
+        padding: 10px;
+        margin: 0;
+        text-align: left;
+    }
+
+    nav.active a {
+        display: block;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .section {
+        margin: 20px 5%;
+        padding: 20px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    iframe {
+        height: 220px;
+    }
+}
+.shop-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.shop-form label {
+    font-weight: bold;
+    color: #ffb3b3;
+}
+
+.shop-form input,
+.shop-form select,
+.shop-form textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,0,0,0.3);
+    background: rgba(255,255,255,0.08);
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+.shop-form input:focus,
+.shop-form select:focus,
+.shop-form textarea:focus {
+    box-shadow: 0 0 15px red;
+    border: 1px solid red;
+}
+
+.shop-form textarea {
+    resize: none;
+    height: 120px;
+}
+
+.shop-form button {
+    padding: 14px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg, red, darkred);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px red;
+    transition: 0.3s;
+}
+
+.shop-form button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px red;
+}
